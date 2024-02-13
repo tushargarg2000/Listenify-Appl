@@ -18,15 +18,19 @@ public class Album {
 
     public boolean findSong(String title){
 
-        for(Song song: songList) {
-            if(song.getSongTitle().equals(title))
+        //List<Song> list = [1,2,3,4,5,6,7]
+        //you need to find out if 5 is present in the list or not ?
+
+        for(int i=0;i<songList.size();i++){
+            Song song = songList.get(i);
+            if(song.getSongTitle().equals(title)){
                 return true;
+            }
         }
         return false;
     }
 
     public String addNewSongToPlayList(String title,double duration){
-
 
         //Check if song is already present : return
         if(findSong(title)==false){
@@ -44,7 +48,6 @@ public class Album {
 
         //Song No is a 1 based indexing
         // list Index is a 0 based indexing
-
         int index = songNo - 1;
         if(index<=songList.size()-1){
             Song song = songList.get(index);
@@ -61,7 +64,6 @@ public class Album {
                 return;
             }
         }
-
     }
 
 
